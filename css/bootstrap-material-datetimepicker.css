@@ -317,6 +317,7 @@
 .dtp-btn-ok{
     color: var(--text) !important;
     background-color: var(--white) !important;
+    border-radius: 18px;
 }
 
 .dtp-btn-now:focus,
