@@ -5,6 +5,8 @@
 
    moment.locale('en');
 
+   color_primary = '#68a08c';
+
    function Plugin(element, options)
    {
       this.currentView = 0;
@@ -379,8 +381,8 @@
                     var x = -(162 * (Math.sin(-Math.PI * 2 * (i / 12))));
                     var y = -(162 * (Math.cos(-Math.PI * 2 * (i / 12))));
 
-                    var fill = ((this.currentDate.format(hFormat) == i) ? "#8BC34A" : 'transparent');
-                    var color = ((this.currentDate.format(hFormat) == i) ? "#fff" : '#000');
+                    var fill = ((this.currentDate.format(hFormat) == i) ? color_primary : 'transparent');
+                    var color = ((this.currentDate.format(hFormat) == i) ? "white" : "#6c757d");
 
                     var svgHourCircle = this.createSVGElement("circle", {'id': 'h-' + i, 'class': 'dtp-select-hour', 'style': 'cursor:pointer', r: '30', cx: x, cy: y, fill: fill, 'data-hour': i});
 
@@ -409,8 +411,8 @@
                        var x = -(110 * (Math.sin(-Math.PI * 2 * (i / 12))));
                        var y = -(110 * (Math.cos(-Math.PI * 2 * (i / 12))));
 
-                       var fill = ((this.currentDate.format(hFormat) == (i + 12)) ? "#8BC34A" : 'transparent');
-                       var color = ((this.currentDate.format(hFormat) == (i + 12)) ? "#fff" : '#000');
+                       var fill = ((this.currentDate.format(hFormat) == (i + 12)) ? color_primary : 'transparent');
+                       var color = ((this.currentDate.format(hFormat) == (i + 12)) ? "white" : "#6c757d");
 
                        var svgHourCircle = this.createSVGElement("circle", {'id': 'h-' + (i + 12), 'class': 'dtp-select-hour', 'style': 'cursor:pointer', r: '30', cx: x, cy: y, fill: fill, 'data-hour': (i + 12)});
 
@@ -468,7 +470,7 @@
                     var x = -(s * (Math.sin(-Math.PI * 2 * (i / 60))));
                     var y = -(s * (Math.cos(-Math.PI * 2 * (i / 60))));
 
-                    var color = ((this.currentDate.format("m") == i) ? "#8BC34A" : 'transparent');
+                    var color = ((this.currentDate.format("m") == i) ? color_primary : 'transparent');
 
                     var svgMinuteCircle = this.createSVGElement("circle", {'id': 'm-' + i, 'class': 'dtp-select-minute', 'style': 'cursor:pointer', r: r, cx: x, cy: y, fill: color, 'data-minute': i});
 
@@ -490,7 +492,7 @@
                        var x = -(162 * (Math.sin(-Math.PI * 2 * (i / 60))));
                        var y = -(162 * (Math.cos(-Math.PI * 2 * (i / 60))));
 
-                       var color = ((this.currentDate.format("m") == i) ? "#fff" : '#000');
+                       var color = ((this.currentDate.format("m") == i) ? "white" : "#6c757d");
 
                        var svgMinuteText = this.createSVGElement("text", {'id': 'tm-' + i, 'class': 'dtp-select-minute-text', 'text-anchor': 'middle', 'style': 'cursor:pointer', 'font-weight': 'bold', 'font-size': '20', x: x, y: y + 7, fill: color, 'data-minute': i});
                        svgMinuteText.textContent = i;
@@ -535,13 +537,13 @@
                  if (isHour)
                  {
                     var svgMinuteHand = this.createSVGElement("line", {class: 'minute-hand', x1: 0, y1: 0, x2: 0, y2: -150, stroke: '#bdbdbd', 'stroke-width': 2});
-                    var svgHourHand = this.createSVGElement("line", {class: 'hour-hand', x1: 0, y1: 0, x2: 0, y2: hl, stroke: '#8BC34A', 'stroke-width': 8});
+                    var svgHourHand = this.createSVGElement("line", {class: 'hour-hand', x1: 0, y1: 0, x2: 0, y2: hl, stroke: color_primary, 'stroke-width': 8});
 
                     svgGElement.appendChild(svgMinuteHand);
                     svgGElement.appendChild(svgHourHand);
                  } else
                  {
-                    var svgMinuteHand = this.createSVGElement("line", {class: 'minute-hand', x1: 0, y1: 0, x2: 0, y2: -150, stroke: '#8BC34A', 'stroke-width': 2});
+                    var svgMinuteHand = this.createSVGElement("line", {class: 'minute-hand', x1: 0, y1: 0, x2: 0, y2: -150, stroke: color_primary, 'stroke-width': 2});
                     var svgHourHand = this.createSVGElement("line", {class: 'hour-hand', x1: 0, y1: 0, x2: 0, y2: hl, stroke: '#bdbdbd', 'stroke-width': 8});
 
                     svgGElement.appendChild(svgHourHand);
@@ -1030,12 +1032,12 @@
               },
                refreshYearItems:function () {
                   var curYear=this.currentDate.year(),midYear=this.midYear;
-                   var minYear=1850;
+                   var minYear=0;
                    if (typeof (this.minDate) !== 'undefined' && this.minDate !== null){
                        minYear=moment(this.minDate).year();
                    }
 
-                   var maxYear=2200;
+                   var maxYear=5000;
                    if (typeof (this.maxDate) !== 'undefined' && this.maxDate !== null){
                        maxYear=moment(this.maxDate).year();
                    }
@@ -1136,11 +1138,11 @@
                     var th = parent.find('.dtp-select-hour-text');
                     for (var i = 0; i < th.length; i++)
                     {
-                       $(th[i]).attr('fill', '#000');
+                       $(th[i]).attr('fill', '#6c757d');
                     }
 
-                    $(parent.find('#h-' + value)).attr('fill', '#8BC34A');
-                    $(parent.find('#th-' + value)).attr('fill', '#fff');
+                    $(parent.find('#h-' + value)).attr('fill', color_primary);
+                    $(parent.find('#th-' + value)).attr('fill', 'white');
 
                     this.currentDate.hour(parseInt(value));
 
@@ -1172,11 +1174,11 @@
                     var tm = parent.find('.dtp-select-minute-text');
                     for (var i = 0; i < tm.length; i++)
                     {
-                       $(tm[i]).attr('fill', '#000');
+                       $(tm[i]).attr('fill', "#6c757d");
                     }
 
-                    $(parent.find('#m-' + value)).attr('fill', '#8BC34A');
-                    $(parent.find('#tm-' + value)).attr('fill', '#fff');
+                    $(parent.find('#m-' + value)).attr('fill', color_primary);
+                    $(parent.find('#tm-' + value)).attr('fill', 'white');
 
                     this.currentDate.minute(parseInt(value));
                     this.showTime(this.currentDate);
@@ -1282,7 +1284,7 @@
                     $(".dtp-picker-days tbody tr td").each(function () {
                        if (!(($.inArray($(this).index(), enableDays)) >= 0)) {
                           $(this).find('a').css({
-                             "background": "#e3e3e3",
+                             "background": "white",
                              "cursor": "no-drop",
                              "opacity": "0.5"
                           }).off("click");

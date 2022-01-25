@@ -8,6 +8,7 @@
     --dark: #000;
     --text: #6c757d;
     --date-hover: #e8e8e8;
+    --date-hover: #bdbcbc;
 }
 
 .dtp {
@@ -80,10 +81,9 @@
     color: var(--white-hover);
 }
 
-.dtp div.dtp-picker {
-    padding-left: .2rem;
-    padding-right: .2rem;
-    padding-top: 8px;
+.dtp div.dtp-picker {   
+    height: 100%;
+    padding: .2rem;
     text-align: center;
 }
 
@@ -200,11 +200,6 @@
     display: inline-block;
 }
 
-
-
-
-
-
 .dtp a.dtp-meridien-am, .dtp a.dtp-meridien-pm {
     position: relative;
     top: 10px;
@@ -218,7 +213,7 @@
 }
 
 .dtp .dtp-actual-meridien a.selected {
-    background: #689F38;
+    background: var(--primary);
     color: #fff;
 }
 
