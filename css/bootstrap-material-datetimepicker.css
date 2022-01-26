@@ -8,7 +8,6 @@
     --dark: #000;
     --text: #6c757d;
     --date-hover: #e8e8e8;
-    --date-hover: #bdbcbc;
 }
 
 .dtp {
@@ -332,4 +331,14 @@
 .dtp-btn-cancel:hover,
 .dtp-btn-ok:hover{
     color: var(--primary-hover) !important;
+}
+
+.dtp table.dtp-picker-days tr > td > span.dtp-select-day {
+    color: #BDBDBD !important;
+    cursor: pointer !important;
+}
+
+.dtp table.dtp-picker-days tr > td > span.dtp-select-day:hover{
+    background-color: var(--white) !important;
+    cursor: pointer !important;
 }
