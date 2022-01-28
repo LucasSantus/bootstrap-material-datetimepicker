@@ -1,12 +1,12 @@
-# bootstrap-material-datetimepicker
-Material DateTimePicker
+<h1 align="center">Date&TimePicker Bootstrap</h1>
 
-Originaly designed for Bootstrap Material, the V2.0 is now completely standalone and responsive.
+Originalmente projetado para Bootstrap Material, o V2.0 agora é completamente autônomo e responsivo.
 
-### Updates
+<h3>Atualizações</h3>
 
 | Date				| Author			| Description											 |
 | ----------------- | ----------------- | ------------------------------------------------------ |
+| 2022-01-28		| LucasSantus		| Implement Front-End	
 | 2016-04-08		| donovansolms		| Disable specific days (#60 and #97)				 	 |
 | 2016-04-08		| T00rk				| Fixed #85	 								 	 		 |
 | 2016-04-08		| FoxyCorndog		| Fix PM overwrite bug	 					 	 		 |
@@ -31,32 +31,7 @@ Originaly designed for Bootstrap Material, the V2.0 is now completely standalone
 | 2015-03-04		| T00rk				| Added Time picker										 |
 (\*) File names have been changed
 
-bootstrap-material-datepicker.js => bootstrap-material-date**time**picker.js
-
-bootstrap-material-datepicker.css => bootstrap-material-date**time**picker.css
-
-### Prerequisites
-
-jquery [http://jquery.com/download/](http://jquery.com/download/)
-
-momentjs [http://momentjs.com/](http://momentjs.com/)
-
-Google Material Icon Font `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
-
-
-### Live Example
-
-[Live example](http://t00rk.github.io/bootstrap-material-datetimepicker/)
-
-### Usage
-
-	$('input').bootstrapMaterialDatePicker();
-
-### bower
-
-	bower install bootstrap-material-datetimepicker
-
-### Parameters
+<h3>Parâmetros</h3>
 
 | Name				| Type							| Description									|
 | ----------------- | ----------------------------- | --------------------------------------------- |
@@ -79,9 +54,7 @@ Google Material Icon Font `<link href="https://fonts.googleapis.com/icon?family=
 | **triggerEvent**		| String						| Event to fire the calendar (default: focus)		|
 | **monthPicker**	| Boolean						| true => Act as monthpicker (hide calendar) (default: false) |
 
-
-
-### Events
+<h3>Eventos</h3>
 
 | Name				| Parameters				| Description										|
 | ----------------- | ------------------------- | ------------------------------------------------- |
@@ -93,9 +66,12 @@ Google Material Icon Font `<link href="https://fonts.googleapis.com/icon?family=
 | **close**	        | event				        | datepicker is closed								|
 
 
-### Methods
+<h3>Métodos</h3>
 
-        $('input').bootstrapMaterialDatePicker('setDate', moment());
+```
+$('input').bootstrapMaterialDatePicker('setDate', moment());
+
+```
 
 | Name				| Parameter					| Description					|
 | ----------------- | ------------------------- | ----------------------------- |
